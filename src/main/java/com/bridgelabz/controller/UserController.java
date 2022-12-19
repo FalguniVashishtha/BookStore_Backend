@@ -1,7 +1,5 @@
 package com.bridgelabz.controller;
 
-
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +43,12 @@ public class UserController {
 		UserDto user = userService.findById(Id);
 		return new ResponseEntity(user, "Find successfully");
 	}
+	
+	@GetMapping("/getUserByToken")
+	public ResponseEntity getUserByLogin(@RequestHeader String token) {
+		UserDto userDto = userService.getUserByLogin(token);
+		return new ResponseEntity(userDto, "Fetched user details");
+	}
 
 	@GetMapping("/getUserByEmail/{email}")
 	public ResponseEntity getDataByEmail(@PathVariable String email) {
@@ -58,7 +62,7 @@ public class UserController {
 		return new ResponseEntity(user, "Updated successfully");
 	}
 
-	@GetMapping("/login")
+	@PostMapping("/login")
 	public ResponseEntity loginUser(@RequestBody LoginDto loginDto) {
 		String login = userService.loginUser(loginDto);
 		return new ResponseEntity(login, "Login successfully");

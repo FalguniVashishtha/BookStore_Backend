@@ -1,12 +1,21 @@
 package com.bridgelabz.dto;
 
 public class BookDto {
+	public int bookId;
 	public String bookName;
 	public int price;
 	public String authorName;
 	public int bookQuantity;
 	public String bookImage;
 	public String bookDescription;
+	
+	public int getBookId() {
+		return bookId;
+	}
+	public void setBookId(int bookId) {
+		this.bookId = bookId;
+	}
+	
 	public String getBookName() {
 		return bookName;
 	}

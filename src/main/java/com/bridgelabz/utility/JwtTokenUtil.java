@@ -21,7 +21,7 @@ public class JwtTokenUtil implements Serializable {
 	 */
 	private static final long serialVersionUID = 2179508099775547989L;
 
-	UserDto userDto = new UserDto();
+	LoginDto userDto = new LoginDto();
 
 	// @Value("${jwt.secret}")
 	private String secret = "qwerty123";
@@ -54,7 +54,7 @@ public class JwtTokenUtil implements Serializable {
 				.signWith(SignatureAlgorithm.HS512, secret).compact();
 	}
 
-	public UserDto decode(String token) {
+	public LoginDto decode(String token) {
 		final Map<String, Object> claims = Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
 		userDto.setEmail((String) claims.get("Email"));
 		userDto.setPassword((String) claims.get("Password"));

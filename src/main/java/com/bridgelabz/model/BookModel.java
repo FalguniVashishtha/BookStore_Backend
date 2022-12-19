@@ -13,7 +13,7 @@ public class BookModel {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "bookId", nullable = false)
+    @Column(name = "book_id", nullable = false)
     private Long bookId;
 
     @Column(name="book_name")

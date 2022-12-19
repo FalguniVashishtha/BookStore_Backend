@@ -22,13 +22,43 @@ public class UserModel {
 	String email;
 	String DOB;
 	String password;
+	private Boolean IsVerified = false;
+	private Boolean IsLogin;
+	
+	
 
 	public UserModel() {
 		super();
 	}
+	
+	
 
-	public UserModel(Long userId, String firstName, String lastName, String address, String email, String dOB,
-			String password) {
+public Boolean getIsVerified() {
+		return IsVerified;
+	}
+
+
+
+	public void setIsVerified(Boolean isVerified) {
+		IsVerified = isVerified;
+	}
+
+
+
+	public Boolean getIsLogin() {
+		return IsLogin;
+	}
+
+
+
+	public void setIsLogin(Boolean isLogin) {
+		IsLogin = isLogin;
+	}
+
+
+
+public UserModel(Long userId, String firstName, String lastName, String address, String email, String dOB,
+			String password, Boolean isVerified, Boolean isLogin) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
@@ -37,7 +67,23 @@ public class UserModel {
 		this.email = email;
 		DOB = dOB;
 		this.password = password;
+		IsVerified = isVerified;
+		IsLogin = isLogin;
 	}
+
+
+
+//	public UserModel(Long userId, String firstName, String lastName, String address, String email, String dOB,
+//			String password) {
+//		super();
+//		this.userId = userId;
+//		this.firstName = firstName;
+//		this.lastName = lastName;
+//		this.address = address;
+//		this.email = email;
+//		DOB = dOB;
+//		this.password = password;
+//	}
 
 	public Long getUserId() {
 		return userId;

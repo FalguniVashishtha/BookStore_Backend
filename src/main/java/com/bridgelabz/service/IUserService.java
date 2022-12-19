@@ -22,6 +22,8 @@ public interface IUserService {
 	String loginUser(LoginDto loginDto);
 
 	UserDto logout(String token);
+	
+	UserDto getUserByLogin(String token);
 
 //	String forgotPassword(UserDto userDto);
 
